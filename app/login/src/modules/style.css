@@ -1,7 +1,17 @@
-.login-form-button {
-	width: 100%;
+.root {
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 180px;
 }
 
-.forgot-password {
-	text-align: right;
+.login-form {
+	min-width: 200px;
+}
+
+.login-form-button {
+	width: 100%;
 }

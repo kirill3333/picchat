@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
           {getFieldDecorator('userName', {
             rules: [{ required: true, message: 'Please input your username!' }],
           })(
-            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
+            <Input prefix={<Icon type="mobile" style={{ fontSize: 13 }} />} placeholder="Username" />
           )}
         </FormItem>
         <FormItem>
@@ -31,19 +31,6 @@ class LoginForm extends React.Component {
           )}
         </FormItem>
         <FormItem>
-          <Row type="flex" justify="space-between">
-            <Col span={12}>
-              {getFieldDecorator('remember', {
-                valuePropName: 'checked',
-                initialValue: true,
-              })(
-                <Checkbox>Remember me</Checkbox>
-              )}
-            </Col>
-            <Col span={12} className="forgot-password">
-              <a href="">Forgot password</a>
-            </Col>
-          </Row>
           <Row>
             <Button type="primary" htmlType="submit" className="login-form-button">Log in</Button>
           </Row>
