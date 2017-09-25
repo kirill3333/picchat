@@ -1,0 +1,17 @@
+{
+  "name": "user",
+  "version": "0.0.1",
+  "description": "User service to store and provide user information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kirill Novikov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.5",
+    "mysql": "^2.14.1",
+    "password-hash": "^1.2.2",
+    "uuid": "^3.1.0"
+  }
+}
