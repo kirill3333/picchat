@@ -1,6 +1,5 @@
 import React from 'react'
-import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd'
-import './style.css'
+import { Form, Icon, Input, Button, Row } from 'antd'
 const FormItem = Form.Item
 
 class LoginForm extends React.Component {

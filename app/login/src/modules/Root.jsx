@@ -3,6 +3,7 @@ import { Row, Col } from 'antd'
 import { LocaleProvider } from 'antd'
 import enUS from 'antd/lib/locale-provider/en_US'
 import Login from './Login.jsx'
+import './style.css'
 
 export default class App extends React.Component {
   render() {
