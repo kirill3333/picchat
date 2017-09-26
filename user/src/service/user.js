@@ -12,9 +12,7 @@ function checkByName(name) {
     .toString()
 
   return connector.query(query)
-    .then((results) => {
-      return !(results && results.length > 0)
-    })
+    .then((results) => !(results && results.length > 0))
     .catch((error) => {
       winston.log('debug', error)
       return false
@@ -30,9 +28,7 @@ function checkByPhone(mobile) {
     .toString()
 
   return connector.query(query)
-    .then((results) => {
-      return !(results && results.length > 0)
-    })
+    .then((results) => !(results && results.length > 0))
     .catch((error) => {
       winston.log('debug', error)
       return false

@@ -12,6 +12,4 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/user', registerRouter)
 
-app.listen(6001, function () {
-  winston.log('info', 'User service started at 6001')
-})
+app.listen(6001, () => winston.log('info', 'User service started at 6001'))
