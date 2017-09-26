@@ -10,10 +10,10 @@ function checkByName(name) {
     .from("user")
     .where('nick = ?', name)
     .toString()
+
   return connector.query(query)
     .then((results) => {
-      if (results && results.length > 0) return false
-      return true
+      return !(results && results.length > 0)
     })
     .catch((error) => {
       winston.log('debug', error)
@@ -28,10 +28,10 @@ function checkByPhone(mobile) {
     .from("user")
     .where('mobile = ?', mobile)
     .toString()
+
   return connector.query(query)
     .then((results) => {
-      if (results && results.length > 0) return false
-      return true
+      return !(results && results.length > 0)
     })
     .catch((error) => {
       winston.log('debug', error)
