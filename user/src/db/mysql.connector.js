@@ -1,13 +1,15 @@
 const mysql = require('mysql')
+const winston = require('winston')
+
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'example.org',
-  user: 'bob',
-  password: 'secret',
-  database: 'my_db'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 })
 
-function getData(query) {
+function queryData(query) {
   return getConnection().then((connection) => {
     return executeQuery(query, connection)
   }).then((response) => {
@@ -19,7 +21,7 @@ function getData(query) {
   })
 }
 
-function setData(query) {
+function processData(query) {
   return getConnection().then((connection) => {
     return executeQuery(query, connection)
   }).then((response) => {
@@ -43,7 +45,7 @@ function getConnection() {
 const releaseConnection = (connection) => connection || connection.release()
 
 function executeQuery(query, connection) {
-  console.log(query);
+  winston.log('debug', query)
   return new Promise((resolve, reject) => {
     connection.query(query, function (error, results, fields) {
       if (error) {
@@ -55,4 +57,9 @@ function executeQuery(query, connection) {
       resolve(result)
     });
   })
+}
+
+module.exports = {
+  query: queryData,
+  process: processData
 }
