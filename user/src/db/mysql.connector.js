@@ -53,9 +53,9 @@ function executeQuery(query, connection) {
         reject(result)
       }
 
-      let result = { results: results, fields: fields, connection: connection };
+      let result = { results: results, fields: fields, connection: connection }
       resolve(result)
-    });
+    })
   })
 }
 

@@ -10,7 +10,7 @@ function validateUser(user) {
   ])
     .then((results) => {
       if (results[0] && results[1]) return user
-      throw new Error('Usr is not valid')
+      throw new Error('User is not valid')
     })
 }
 

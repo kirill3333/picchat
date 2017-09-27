@@ -42,10 +42,12 @@ function createUser(user) {
   const query = squel
     .insert()
     .into('user')
-    .set('uuid', uuid)
-    .set('password', hashedPassword)
-    .set('mobile', user.mobile)
-    .set('nick', user.nick)
+    .setFields({
+      uuid: uuid,
+      password: hashedPassword,
+      mobile: user.mobile,
+      nick: user.nick
+    })
     .toString()
 
   return connector.process(query)

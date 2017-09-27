@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const registerRouter = require('./router/register')
 const app = express()
 
-winston.level = 'debug'
+winston.level = process.env.LOG_LEVEL
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
