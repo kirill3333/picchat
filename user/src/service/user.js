@@ -35,6 +35,17 @@ function checkByPhone(mobile) {
     })
 }
 
+function getByPhone(mobile) {
+  if (!mobile) return Promise.resolve({})
+
+  const query = squel.select()
+    .from("user")
+    .where('mobile = ?', mobile)
+    .toString()
+  return connector.query(query)
+    .then((results) => results[0])
+}
+
 function createUser(user) {
   const uuid = uuidv4()
   const hashedPassword = passwordHash.generate(user.password)
@@ -56,5 +67,6 @@ function createUser(user) {
 module.exports = {
   checkByName: checkByName,
   checkByPhone: checkByPhone,
-  create: createUser
+  create: createUser,
+  getByPhone
 }
